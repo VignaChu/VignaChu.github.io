@@ -8,8 +8,8 @@ lastmod: 2022-06-09T20:12:52+08:00
 
 ## 本站信息
 
-- 站名： 拔剑Sketon
-- 站长： 拔剑Sketon
+- 站名： VignaChu个人博客
+- 站长： VignaChu
 
 ## 申请方法
 

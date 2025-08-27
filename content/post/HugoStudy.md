@@ -76,7 +76,7 @@ email: XXX@XXX.com
 
 ## 部署到GitHub Pages
 
-不写了，明天再写，睡了Zzz
+*不写了，明天再写，睡了Zzz*
 
 ## 参考资料
 - [Hugo官网](https://gohugo.io/)

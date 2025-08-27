@@ -16,8 +16,7 @@ permissions:
   pages: write
   id-token: write
 
-# 仅允许一个并发部署，跳过在进行中的运行与最新排队的运行之间排队的运行。
-# 但是，请不要取消进行中的运行，因为我们希望这些生产部署能够完成。
+# 仅允许一个并发部署
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -52,7 +51,6 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: 使用Hugo构建
         env:
-          # 为了与Hugo模块的最大向后兼容性
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
@@ -60,11 +58,13 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
-      - name: 上传构建产物
-        # ✅ 修复：将 v2 升级到 v3 以避免因依赖 upload-artifact@v3 被弃用而导致的失败
-        uses: actions/upload-pages-artifact@v3
+      - name: 上传构建产物 (使用 upload-artifact@v4)
+        # ✅ 强制使用 v4 版本，彻底避免 v3 弃用问题
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: ./public
+          retention-days: 1
 
   # 部署作业
   deploy:

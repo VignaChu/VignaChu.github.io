@@ -36,7 +36,8 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest' # 使用最新版本的Hugo
-          # extended: true # 如果你需要 Sass/SCSS 支持，取消注释这行
+          # 新增: 取消注释此行以安装 Hugo Extended 版本，用于处理 Sass/SCSS
+          extended: true
 
       # 如果你的主题需要 Node.js 依赖，请保留此步骤
       - name: Install Node.js Dependencies
@@ -49,6 +50,7 @@ jobs:
         run: hugo --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload Artifact
+        # 将版本号从 v2 升级到 v4，以解决弃用警告
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
@@ -62,4 +64,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+        # 将版本号从 v2 升级到 v4，以解决弃用警告
         uses: actions/deploy-pages@v4

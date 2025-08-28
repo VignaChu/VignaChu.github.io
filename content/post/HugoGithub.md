@@ -103,3 +103,7 @@ mermaid: true
 - [Hugo官方文档|在 GitHub Pages 上托管](https://hugo.opendocs.io/hosting-and-deployment/hosting-on-github/) 
 - [廖雪峰的官方网站|Git教程](https://liaoxuefeng.com/books/git/remote/index.html)
 - [将本地hugo博客部署到github pages上](https://zhuanlan.zhihu.com/p/25224148453)**(本文已过期)**
+
+{{<postLinkCard path="/post/HugoStudy" cover="auto" >}}
+
+{{<postLinkCard path="/post/KotlinStudy" cover="auto" >}}

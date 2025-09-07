@@ -2,8 +2,8 @@
 title: Kotlin语法初学
 
 cover: ./cover/Kotlin1.png
-date: 2025-08-27T23:12:52+08:00
-lastmod: 2025-08-27T23:12:52+08:00
+date: 2025-08-28T23:12:52+08:00
+lastmod: 2025-08-28T23:12:52+08:00
 tags:
   - Android
   - Study
@@ -105,6 +105,8 @@ Kotlin 支持以下数据类型：
 - **类**：`class`、`object`
 - **接口**：`interface`
 - **注解**：`annotation class`
+
+**注意：**kotlin全部使用对象类型，不再存在基本类型。
 
 要建立只读列表，可以使用`listOf()`函数，建立可变列表，可以使用`mutableListOf()`函数。其余两者替换方法中对应的名称即可。
 

@@ -39,6 +39,8 @@ if (条件表达式) { // 条件成立执行的代码块
 
 #### when语句
 
+就相当于其他语言中的switch语句，可以匹配多个值，可以判断是否在某个范围内，可以判断是否不在某个范围内。
+
 格式：
 
 ```kotlin
@@ -51,6 +53,31 @@ when (表达式) {
 }
 ```
 
+也可以使用is判断参数类型
+
+```kotlin
+when (表达式) {
+    is 数据类型 -> { // 代码块 } // 判断是否是某个类型
+    !is 数据类型 -> { // 代码块 } // 判断是否不是某个类型
+    else -> { // 代码块 } // 相当于default
+}
+```
+
+when语句后如果不写括号，则可以当成一串if else语句来使用。
+
+```kotlin
+when {
+    条件1 -> { // 代码块 }
+    条件2 -> { // 代码块 }
+    else -> { // 代码块 } //一定要加else
+}
+```
+
+此外判断语句可以直接当做函数的返回值，不用写return关键字。
+
+```kotlin
+fun max(a: Int, b: Int): Int = if (a > b) a else b
+```
 
 
 ### 函数
@@ -134,44 +161,9 @@ val add = fun(x: Int, y: Int): Int {
 }
 ```
 
-### 类
-
-#### 类声明
-
-格式：
-
-```kotlin
-class 类名{
-    // 构造函数
-    constructor(参数: 数据类型){
-        // 函数体
-    }
-
-    // 成员变量
-    var 变量名: 数据类型 = 初始值
-
-    // 成员函数
-    fun 函数名(参数: 数据类型): 返回值类型{
-        // 函数体
-    }
-}
-```
-
-#### 继承
-
-格式：
-
-```kotlin
-class 子类名 : 父类名{
-    // 构造函数
-    constructor(参数: 数据类型){
-        // 函数体
-    }
-
-    // 成员变量
-    var 变量名: 数据类型 = 初始值
-
-    // 成员函数
 ## 参考资料
 - [Kotlin 官方文档](https://kotlinlang.org/docs/reference/)
+- [Kotlin——高级篇（一）：Lambda表达式详解](https://www.cnblogs.com/Jetictors/p/8647888.html)
+- [Kotlin——初级篇（七）：函数（方法）基础总结](https://www.cnblogs.com/Jetictors/p/8506941.html)
+- [Kotlin入门学习(非常详细)，从零基础入门到精通，看完这一篇就够了](https://blog.csdn.net/Javachichi/article/details/131677550?sharetype=blog&shareId=131677550&sharerefer=APP&sharesource=2301_80150902&sharefrom=link)
 

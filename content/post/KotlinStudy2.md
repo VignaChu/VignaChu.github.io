@@ -1,7 +1,7 @@
 ---
 title: Kotlin语法初学2
 
-cover: ./cover/Kotlin2.png
+cover: ./cover/Kotlin1.png
 date: 2025-09-06T12:12:52+08:00
 lastmod: 2025-09-06T12:12:52+08:00
 tags:

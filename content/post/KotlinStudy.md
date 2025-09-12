@@ -65,6 +65,8 @@ val 1name = "Kotlin" // 数字开头在JAVA中即不行
 val name@ = "Kotlin"
 ```
 
+
+
 #### 变量声明
 
 kotlin通过var关键字声明变量，通过val关键字声明常量。默认为自动类型推断，在变量名后面加:数据类型可以显式声明变量的数据类型。
@@ -108,6 +110,62 @@ Kotlin 支持以下数据类型：
 
 **注意：**kotlin全部使用对象类型，不再存在基本类型。
 
+##### 数组
+
+创建数组：
+1. arrayOf()
+  
+```kotlin
+var arr = arrayOf("0","2","3",'a',32.3f)
+for (v in arr){
+    print(v)
+    print("\t")
+}
+```
+
+2. arrayOfNulls()
+
+```kotlin
+var arr3 = arrayOfNulls<Int>(3)
+
+//如若不予数组赋值则arr3[0]、arr3[1]、arr3[2]皆为null
+for(v in arr3){
+    print(v)
+    print("\t")
+}
+```
+输出结果`null	null	null	`
+
+3. Array()
+   参数为元素个数以及一个函数，以索引为参数返回函数值
+```kotlin
+val arr2 = Array(5){i -> i*i}
+for(v in arr2){
+    print(v)
+    print("\t")
+```
+结果为`0 1	4	9	16`
+
+其中还有各种封装好的原始类型的数组：
+1. ByteArray => 表示字节型数组
+2. ShortArray => 表示短整型数组
+3. IntArray => 表示整型数组
+4. LongArray => 表示长整型数组
+5. BooleanArray => 表示布尔型数组
+6. CharArray => 表示字符型数组
+7. FloatArray => 表示浮点型数组
+8. DoubleArray => 表示双精度浮点型数组
+
+
+使用`XXXArrayOf()`赋初始值
+
+##### 字符串
+''' '''为可以包含任何字符的字符串，不会被转义。
+
+在双引号中使用$变量名或${表达式}为字符串模板，
+
+##### 列表、集合、映射
+
 要建立只读列表，可以使用`listOf()`函数，建立可变列表，可以使用`mutableListOf()`函数。其余两者替换方法中对应的名称即可。
 
 ```kotlin
@@ -134,6 +192,19 @@ if (1 in list) {
 使用 *.add()*方法可以向列表中添加元素, *.remove()*方法可以删除元素。
 
 获取映射中是否有对应的键，可以使用 *.containsKey()*方法，获取映射中是否有对应的值，可以使用 *.containsValue()*方法。
+
+#### 位运算
+
+Kotlin与JAVA不同，没有特殊的符号用于位运算，而是采用自带函数(仅用于Int和Long):
+
+1. shl(bits) => 有符号向左移 (类似Java的<<)
+2. shr(bits) => 有符号向右移 (类似Java的>>)
+3. ushr(bits) => 无符号向右移 (类似Java的>>>)
+4. and(bits) => 位运算符 and (同Java中的按位与)
+5. or(bits) => 位运算符 or (同Java中的按位或)
+6. xor(bits) => 位运算符 xor (同Java中的按位异或)
+7. inv() => 位运算符 按位取反 (同Java中的按位取反)
+
 
 *太困了，先写到这里了，晚安Zzz*
 

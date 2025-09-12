@@ -37,6 +37,32 @@ if (条件表达式) { // 条件成立执行的代码块
 }
 ```
 
+此外if表达式会返回分支内部代码块最后一个表达式的值
+```kotlin
+var numA: Int = 2
+var numC: Int = if (numA > 2){
+    numA++
+    numA = 10
+    println("numA > 2 => true")
+    numA
+}else if (numA == 2){
+    numA++
+    numA = 20
+    println("numA == 2 => true")
+    numA
+}else{
+    numA++
+    numA = 30
+    println("numA < 2 => true")
+    numA
+}
+```
+基于这一特性可以利用if表达式构建三目运算符：
+
+```kotlin
+var numB: Int = if ( numA > 2 ) 3 else 5
+```
+
 #### when语句
 
 就相当于其他语言中的switch语句，可以匹配多个值，可以判断是否在某个范围内，可以判断是否不在某个范围内。
@@ -52,6 +78,9 @@ when (表达式) {
     else -> { // 代码块 } // 相当于default
 }
 ```
+注意：Kotlin中when语句后面不用加break。
+
+范围可以用a..b表示闭区间，也可以用a until b表示左闭右开区间。
 
 也可以使用is判断参数类型
 
@@ -79,6 +108,51 @@ when {
 fun max(a: Int, b: Int): Int = if (a > b) a else b
 ```
 
+### 循环语句
+
+#### for语句
+
+1. 基本
+    - 递增(until,左闭右开)
+    - 递减(downTo，闭区间)
+    - 闭区间(..)
+    - 步长(step)
+  ```kotlin
+  //输出0 1 2 3 4
+  for (i in 0 until 5){
+    print("i => $i \t")
+  }
+  //输出15 14 13 12 11
+  for (i in 15 downTo 11){
+    print("i => $i \t")
+  }
+  //输出20 21 22 23 24 25
+  for (i in 20 .. 25){
+    print("i => $i \t")
+  }   
+  //输出10 12 14
+  for (i in 10 until 16 step 2){
+    print("i => $i \t")
+  }
+```
+2. 遍历
+   `for(item in array){...}`
+   ```kotlin
+   val array = arrayOf(1, 2, 3, 4, 5)
+   for(item in array){
+       print(item)
+   }
+   for(item in array.indices){//.indices可以获取数组的所有合法索引值
+       print(array[item])
+   }
+    for ((index,value) in array.withIndex()){  
+        //把元素和它的索引打包成一个对象，可以一次拿到索引和值。
+        println("index => $index \t value => $value")
+    }
+    ```
+
+
+#### while语句和do-while语句与JAVA相同
 
 ### 函数
 

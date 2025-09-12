@@ -123,6 +123,8 @@ for (v in arr){
 }
 ```
 
+同时也可以用这个方法同时为多个变量赋值`val (x, y, z) = arrayOf(10, 20, 30)`
+
 2. arrayOfNulls()
 
 ```kotlin
@@ -146,6 +148,8 @@ for(v in arr2){
 ```
 结果为`0 1	4	9	16`
 
+
+
 其中还有各种封装好的原始类型的数组：
 1. ByteArray => 表示字节型数组
 2. ShortArray => 表示短整型数组
@@ -156,6 +160,22 @@ for(v in arr2){
 7. FloatArray => 表示浮点型数组
 8. DoubleArray => 表示双精度浮点型数组
 
+数组方法:
+1. arr.sort() => 排序
+2. arr.forEach { println(it) } => 遍历数组
+3. arr.filter { it > 2 } => 过滤数组
+4. arr.reverse() => 反转数组
+5. arr.shuffle() => 随机排序数组
+6. arr.fill(a) => 填充数组为a
+7. 数组中+为拼接数组，-为删除数组中与另一个数组相同的元素
+8. arr.slice(1..3) => 切片数组
+   ```kotlin
+   val ori = arrayOf("a", "b", "c")
+   val doubled = ori + ori        // 返回新数组 ["a","b","c","a","b","c"]
+   val slice = ori.copyOfRange(1, 3) // ["b","c"]
+   ```
+9. arr.sum() => 计算数组元素的和
+10. arr.average() => 计算数组元素的平均值
 
 使用`XXXArrayOf()`赋初始值
 

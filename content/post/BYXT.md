@@ -1,6 +1,6 @@
 ---
 title: 编译系统原理笔记
-
+cover: ./cover/BKP2.png
 date: 2025-09-08T22:51:21+08:00
 lastmod: 2025-09-08T22:51:21+08:00
 tags:

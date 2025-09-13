@@ -1,5 +1,5 @@
 ---
-title: Kotlin语法初学
+title: Kotlin语法初学1
 
 cover: ./cover/Kotlin1.png
 date: 2025-08-28T23:12:52+08:00

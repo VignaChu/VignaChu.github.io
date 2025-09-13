@@ -1,6 +1,6 @@
 ---
 title: TCP/IP协议初学
-draft: false
+draft: true
 cover: ./cover/TCPIP.png
 date: 2025-08-26T20:12:52+08:00
 lastmod: 2025-08-26T20:12:52+08:00

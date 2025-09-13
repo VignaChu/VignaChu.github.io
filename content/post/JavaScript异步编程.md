@@ -1,9 +1,9 @@
 ---
 title: JavaScript异步编程
+cover: ./cover/异(步)客.png
 
-cover: ./cover/BKP4.jpg
 date: 2025-09-13T20:12:52+08:00
-lastmod: 2025-09-13T20:12:52+08:00
+lastmod: 2025-09-13T20:12:50+08:00
 
 tags:
   - JavaScript
@@ -203,5 +203,5 @@ async/await的写法：
 - [JavaScript Promise](https://www.runoob.com/js/js-promise.html) 
 - [Javascript异步编程的4种方法](https://www.cnblogs.com/ToTigerMountain/articles/18846477)
 - [详解JS的四种异步解决方案：回调函数、Promise、Generator、async/await（干货满满）](https://blog.csdn.net/lunahaijiao/article/details/124185543)
-- 
+
 

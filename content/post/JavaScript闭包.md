@@ -1,6 +1,6 @@
 ---
 title: JavaScript闭包
-cover: ./cover/closure.jpg
+cover: ../../cover/closure.jpg
 
 date: 2025-09-13T20:23:52+08:00
 lastmod: 2025-09-13T20:12:50+08:00

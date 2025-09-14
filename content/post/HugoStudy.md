@@ -1,7 +1,7 @@
 ---
 title: Hugo初学
 
-cover: ./cover/Hugo1.png
+cover: ../../cover/Hugo1.png
 date: 2025-08-26T20:12:52+08:00
 lastmod: 2025-08-26T20:12:52+08:00
 

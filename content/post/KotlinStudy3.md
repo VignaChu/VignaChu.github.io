@@ -221,19 +221,143 @@ getter/setter的能见度不能高于属性本身。
   }
 ```
 
-剩下的我今天懒得写了，明天再写吧。
+### 对象表达式
 
-#### 方法的重载与重写
+**对象表达式**是kotlin中创建匿名内部类的快捷方式
+```kotlin
+object : 父类(构造函数调用顺序参数)/接口,··· {
+    // 重写方法、定义属性、定义函数等
+}
+```
 
-#### 属性的重写
+不能定义构造函数。
 
-#### 覆盖规则
+# 枚举类
+
+## 定义：
+```kotlin
+enum class Color {
+    RED, GREEN, BLUE
+}
+```
+每个枚举常量都有两个属性：name(名称)和ordinal(位置)，通过枚举类名.常量名.属性名访问。
+```kotlin
+val color = Color.RED
+println(color.name) // RED
+println(color.ordinal) // 0
+```
+## 枚举常量的具体实现
+
+枚举类可以带抽象方法，并且每个枚举常量需要实现它。
+```kotlin
+enum class Operation {
+    // 为每个常量提供抽象方法的具体实现
+    PLUS {
+        override fun calculate(a: Int, b: Int): Int = a + b
+    },
+    MINUS {
+        override fun calculate(a: Int, b: Int): Int = a - b
+    },
+    TIMES {
+        override fun calculate(a: Int, b: Int): Int = a * b
+    },
+    DIVIDE {
+        override fun calculate(a: Int, b: Int): Int = a / b
+    };
+
+    // 抽象方法，必须在每个常量中实现
+    abstract fun calculate(a: Int, b: Int): Int
+}
+```
+# 接口
+
+interface 接口名 {
+    // 接口中的属性、方法、函数
+}
+
+接口可以有属性、方法、函数，但不能有构造函数。
+
+接口可以继承其他接口，但不能继承类。
+
+接口的属性要么没有初始值，要么通过自定义setter方法初始化。
+
+接口的实现类必须实现接口的所有方法。
+
+# 其他
+
+## 数据类
+
+### 定义
+
+数据类是一种特殊的类，它自动生成了equals()、hashCode()、toString()方法，并且提供了copy()方法。
+```kotlin
+data class User(val name: String, val age: Int){
+    var address: String = "",
+    var phone: String = "",
+    //此时类中已经有了name,age,address,phone属性。
+}
+```
+
+### 特性
+
+1. 主构造函数必须有参数
+2. 不能是抽象类、密封类或内部类等。
+3. 可以实现接口，且可以继承自密封类。
+4. 数据类也可以进行解构处理
+```kotlin
+val (name, age, address, phone) = user
+```
+
+### 修改
+
+数据类的修改需要用到自动定义的copy()方法。
+```kotlin
+val user = User("Tom", 25)
+user.address = "China"
+val newUser = user.copy(age = 26)   
+```
+### 特殊的的默认数据类
+
+这些数据类默认被定义好，一常规的数据类有着实现上的不同处，有着一些独特的特性，而且不需要额外的创建类的开销。但是均为不可变值。
+
+#### Pair
+
+Pair是一个数据类，它有两个属性：first和second。能够存储两个不能变的值。
+
+**定义方式**:
+1. `var pair = Pair(1, "Hello")`
+2. `val pair = 1 to "Hello" //为pair特有的语法糖`
+   
+**施工中**
+#### Triple
+
+Triple是一个数据类，它有三个属性：first、second和third。能够存储三个不能变的值。
+
+**定义方式**:
+1. `var triple = Triple(1, "Hello", true)`
+2. `val triple = 1 to "Hello" to true //为triple特有的语法糖`
+   
+**施工中**
+## 密封类
+**施工中**
 
 
+
+## 抽象类
+
+
+
+
+## 内部类
+
+
+
+
+## 委托
+
+委托类似于java中的组合类，通过关键字**by**来实现。
 
 
 # 参考资料
 - [Kotlin——中级篇（一）：类（class）详解](https://www.cnblogs.com/Jetictors/p/7758828.html)
-- [Kotlin——中级篇（一）：类（class）详解](https://www.cnblogs.com/Jetictors/p/7758828.html)
-- [Kotlin——中级篇（一）：类（class）详解](https://www.cnblogs.com/Jetictors/p/7758828.html)
-- [Kotlin——中级篇（一）：类（class）详解](https://www.cnblogs.com/Jetictors/p/7758828.html)
+- [一文彻底搞懂Kotlin中的委托](https://juejin.cn/post/6844904038589267982)

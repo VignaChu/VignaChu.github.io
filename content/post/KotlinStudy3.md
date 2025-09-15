@@ -328,7 +328,7 @@ Pair是一个数据类，它有两个属性：first和second。能够存储两�
 1. `var pair = Pair(1, "Hello")`
 2. `val pair = 1 to "Hello" //为pair特有的语法糖`
    
-**施工中**
+
 #### Triple
 
 Triple是一个数据类，它有三个属性：first、second和third。能够存储三个不能变的值。
@@ -337,26 +337,34 @@ Triple是一个数据类，它有三个属性：first、second和third。能够�
 1. `var triple = Triple(1, "Hello", true)`
 2. `val triple = 1 to "Hello" to true //为triple特有的语法糖`
    
-**施工中**
+此外，两者的tostring()方法也和常规的数据类有所不同。
+
 ## 密封类
-**施工中**
+
+密封类是一种特殊的类，不能被实例化,只可以被继承或构造单例对象。子类都在一个文件中定义。
+
+```kotlin
+sealed class Shape
+```
+
+密封类的子类和单例对象只有有限的几种可能，可以用来条件判断的检查。同时能够表示选项和携带数据。
 
 
+## 抽象类、内部类
 
-## 抽象类
-
-
-
-
-## 内部类
-
-
-
+和JAVA差不多就不说了
 
 ## 委托
 
-委托类似于java中的组合类，通过关键字**by**来实现。
+委托类似于java中的组合类，通过关键字**by**来实现。重点在于一个类委托某个实现了接口的类实现这个接口的功能
 
+语法：
+```kotlin
+class A(b: B) : SomeInterface by b{
+    ...
+}
+```
+这样A具有了SomeInterface的全部方法，并且可以调用A自己的方法。
 
 # 参考资料
 - [Kotlin——中级篇（一）：类（class）详解](https://www.cnblogs.com/Jetictors/p/7758828.html)

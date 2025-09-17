@@ -103,7 +103,7 @@ class Test constructor(num: Int){
 ```
 
 #### 懒加载(by lazy)
-此外`by lazy{}`也可用于延迟初始化*(懒加载)*。可以将只读属性的初始化推迟到第一次真正被访问的时候，即**用的时候才开始赋值**。
+此外`by lazy{}`也可用于延迟初始化*(懒加载)*。可以将只读属性的初始化推迟到第一次真正被访问的时候，即**用的时候才开始赋值**，会将代码块最后一个值赋值给属性。
 ```kotlin
     val data: String by lazy {        // 注意是 val
         println("compute!")

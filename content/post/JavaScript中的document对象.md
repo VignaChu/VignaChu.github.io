@@ -1,5 +1,5 @@
 ---
-title: JavaScript中的ducument对象
+title: JavaScript中的document对象
 cover: ../../cover/little_don_cute.jpg
 
 date: 2025-09-17T21:20:52+08:00
@@ -43,12 +43,12 @@ document对象是window对象的属性，因此可以直接通过window.document
    
    `const li = document.createElement('li'); `
 2. `createTextNode(text)`：创建文本节点。(纯文本，需要添加到元素中)
-   ```javascript$;.$
+   ```javascript
    function addTextNode(text) {
         const newtext = document.createTextNode(text);
         const p1 = document.getElementById("p1");
 
-        p1.appendChild(newtext); // 这个方法会在Element对象中讲到9111‘；；
+        p1.appendChild(newtext); // 这个方法会在Element对象中讲到
       }
     ```
 3. `createDocumentFragment()`：创建一个文档碎片对象，可以用来批量创建元素。

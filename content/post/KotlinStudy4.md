@@ -105,11 +105,50 @@ println("result = $result")
 
 1. 基础语法
 
+类与接口
+
 ```kotlin
 class Box<T>(t: T) {
     var value = t
 }
+
+interface Drinks<T> {
+    fun taste(): T
+    fun price(t: T)
+}
 ```
+
+方法
+```kotlin
+fun <T> fromJson(json: String, tClass: Class<T>): T? {
+    /*获取T的实例*/
+    val t: T? = tClass.newInstance()
+    return t
+}
+```
+
+2. 泛型约束
+   
+可以声明泛型必须是某个类的子类
+
+```kotlin
+class Soldier<T : Weapon>(_item: T) {}
+```
+其中T : Weapon表示T必须是Weapon类或其子类的类型。
+
+当需要指定多个约束需要使用where关键字
+
+```kotlin
+class ClassA{}
+
+interface InterfaceA{}
+
+class ClassB<T>() where T : ClassA, T : InterfaceA{}    
+```
+
+# 协程
+
+
 
 
 # 参考资料

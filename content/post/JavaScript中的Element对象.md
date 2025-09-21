@@ -1,7 +1,7 @@
 ---
 title: WebAPI中的element对象
 cover: ../../cover/蛮与伞.png
-description: 介绍JavaScript中的Element对象。
+description: 介绍WebAPI中的Element对象。
 
 date: 2025-09-19T16:32:52+08:00
 lastmod: 2025-09-17T20:12:50+08:00
@@ -30,6 +30,7 @@ mermaid: true
 4. classList:返回元素的classList对象，可读写，classList对象是一个类列表，可以对元素的类进行增(`add()`)删(`remove()`)改(`toggle()`*注:本方法用于翻转状态，即有则删除、无则添加*)查(`contains()`);
 5. **innerHTML**:返回元素的innerHTML内容,可读写, 会将其中的HTML代码渲染;
 6. innerText:返回元素的innerText内容,可读写, 会将其中的HTML代码渲染为纯文本;
+7. style.属性:返回元素的style,可读写, 可以设置元素的CSS样式;
 
 # 方法
 1. focus():使元素获得焦点，即被点击的样子;
@@ -41,6 +42,7 @@ mermaid: true
 7. children():返回元素的子元素只读集合;
 8. **addEventListener()**:添加事件监听器;
 9. **click()**:触发点击操作;
+10. **getAttribute("属性名")**:获取元素的某属性值，此外还有set,remove,create,has等方法。
 
 
 
@@ -48,5 +50,5 @@ mermaid: true
 - [封面图来源](https://safebooru.org/index.php?page=post&s=view&id=6059577)
 - [DOM中Element对象常用属性与方法大全](https://blog.csdn.net/weixin_44992737/article/details/125296017)
 - [HTML DOM Element 对象](https://www.w3school.com.cn/jsref/dom_obj_all.asp)
-- [](https://developer.mozilla.org/zh-CN/docs/Web/API/Element)
+- [Element](https://developer.mozilla.org/zh-CN/docs/Web/API/Element)
 

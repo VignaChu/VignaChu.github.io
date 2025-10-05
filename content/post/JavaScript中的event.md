@@ -40,11 +40,31 @@ element.addEventListener(event, function, useCapture);
 ## 页面事件:
 ## 其他事件:
 
-# 常用event对象属性
+# event对象
+
+## 常用event对象属性
 
 event对象包含了与事件相关的各种信息，包括事件类型、事件源、鼠标位置、键盘按键、表单元素值等。
+这些属性可以再事件监听器中的函数中使用。
 
-1. 
+1. event.target: 返回触发事件的元素;
+2. event.currentTarget: 返回正在处理的元素;
+3. event.type: 返回事件类型;
+4. event.bubbles: 返回事件是否冒泡;
+5. event.timeStamp: 返回从文档加载完成到事件触发的毫秒数;
+6. event.isTrusted: 表示该事件是由用户触发还是JS脚本触发;
+  
+*以下的用于表单输入*
+7. target.value:获取表单输入的值；
+
+## 常用event对象方法
+1. preventDefault():阻止默认行为;
+2. stopPropagation():停止事件冒泡;
+3. stopImmediatePropagation():阻止冒泡且阻止改元素其他的事件进行;
+4. composedPath():返回事件的传播路径;
+  
+
+
 
 # 事件监听器优化策略：
 

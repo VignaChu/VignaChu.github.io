@@ -1,5 +1,5 @@
 ---
-title: WebAPI中的document对象
+title: DOM中的document对象
 cover: ../../cover/little_don_cute.jpg
 
 date: 2025-09-17T21:20:52+08:00

@@ -1,5 +1,5 @@
 ---
-title: WebAPI中的element对象
+title: DOM中的element对象
 cover: ../../cover/蛮与伞.png
 description: 介绍WebAPI中的Element对象。
 
@@ -31,6 +31,8 @@ mermaid: true
 5. **innerHTML**:返回元素的innerHTML内容,可读写, 会将其中的HTML代码渲染;
 6. innerText:返回元素的innerText内容,可读写, 会将其中的HTML代码渲染为纯文本;
 7. style.属性:返回元素的style,可读写, 可以设置元素的CSS样式;
+8. tagName:返回元素的标签名,只读;
+9. value
 
 # 方法
 1. focus():使元素获得焦点，即被点击的样子;
@@ -43,6 +45,7 @@ mermaid: true
 8. **addEventListener()**:添加事件监听器;
 9. **click()**:触发点击操作;
 10. **getAttribute("属性名")**:获取元素的某属性值，此外还有set,remove,create,has等方法。
+11. matches(选择器):判断是否满足选择器;
 
 
 

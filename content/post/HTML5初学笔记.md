@@ -1,11 +1,12 @@
 ---
-title: HTML初学笔记
+title: HTML5初学笔记
 
-cover: ../../cover/HTML2.jpg
-date: 2025-11-04T12:30:52+08:00
+cover: ../../cover/HTML2.png
+date: 2025-11-04T17:15:52+08:00
 lastmod: 2025-11-04T12:30:50+08:00
 tags:
   - HTML
+  - H5
   - 前端学习
   - Study
 categories:

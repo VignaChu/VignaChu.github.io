@@ -29,10 +29,11 @@ mermaid: true
 3. className:返回元素的class属性值,可读写，返回一个字符串，每个类之间用空格分开;
 4. classList:返回元素的classList对象，可读写，classList对象是一个类列表，可以对元素的类进行增(`add()`)删(`remove()`)改(`toggle()`*注:本方法用于翻转状态，即有则删除、无则添加*)查(`contains()`);
 5. **innerHTML**:返回元素的innerHTML内容,可读写, 会将其中的HTML代码渲染;
-6. innerText:返回元素的innerText内容,可读写, 会将其中的HTML代码渲染为纯文本;
-7. style.属性:返回元素的style,可读写, 可以设置元素的CSS样式;
-8. tagName:返回元素的标签名,只读;
-9. value
+6. innerText:返回元素的可见文本内容,可读写, 会将其中的HTML代码渲染为纯文本;
+7. outerHTML:返回元素的HTML原码,以字符串形式存储，保留结构;
+8. style.属性:返回元素的style,可读写, 可以设置元素的CSS样式;
+9. tagName:返回元素的标签名,只读;
+10. value
 
 # 方法
 1. focus():使元素获得焦点，即被点击的样子;
